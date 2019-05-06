@@ -1,20 +1,37 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "jest": true,
     "es6": true
   },
   "extends": ["react-app", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "plugins": ["import", "jsx-a11y", "react"],
   "rules": {
     "react/jsx-filename-extension": [
       "error",
       { "extensions": [".js", ".jsx"] }
     ],
+    "global-require": "off",
     "import/prefer-default-export": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/destructuring-assignment": "off",
     "react/no-access-state-in-setstate": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePatter": "^_"
+      }
+    ],
+    "consistent-return": "off",
+    "no-useless-return": "off"
   }
 }
